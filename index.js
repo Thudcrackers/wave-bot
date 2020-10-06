@@ -14,8 +14,8 @@ express().listen(PORT, () => console.log("Listening on port " + PORT))
 
 bot.on('message', message => {
     console.log(message.channel.id)
-    console.log(message.mentions)
-    if (message.channel.id === 763107608868683877 && message.mentions.size > 0) {
+    console.log(message.mentions.users.size)
+    if (message.channel.id === 763107608868683877 && message.mentions.users.size > 0) {
         message.react("👋");
     }
 });
