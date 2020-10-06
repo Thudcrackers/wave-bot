@@ -4,17 +4,18 @@ const TOKEN = 'process.env.TOKEN';
 const PORT = process.env.PORT || 5000;
 const express = require('express');
 
-bot.on('message', function (message) {
+bot.once('ready', function () {
+    console.log("Ready");
+});
+
+bot.login(TOKEN);
+
+bot.on('message', message => {
     //console.log(message.author)
     if (message.channel == '#welcome' && message.mentions.size > 0) {
         message.react("👋");
     }
 });
-bot.on('ready', function () {
-    console.log("Ready");
-});
-
-bot.login(TOKEN);
 
 express().listen(PORT, () => console.log("Listening on port " + PORT))
 
