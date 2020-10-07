@@ -6,6 +6,7 @@ const express = require('express');
 
 bot.once('ready', function () {
     console.log("Ready");
+    bot.user.setActivity("Manor Lords")
 });
 
 bot.login(TOKEN);
