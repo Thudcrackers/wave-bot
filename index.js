@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 5000;
 const express = require('express');
 
 bot.once('ready', function () {
-    console.log("Ready");
     bot.user.setActivity("Manor Lords")
 });
 
